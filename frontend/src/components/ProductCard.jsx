@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, ShoppingCart } from 'lucide-react';
+import { Heart, ShoppingCart, X } from 'lucide-react';
 
 // Product Card Component
 const ProductCard = ({ product, onClick }) => {
@@ -80,27 +80,38 @@ const ProductCard = ({ product, onClick }) => {
 const ProductDetailPage = ({ product, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState('');
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(onClose, 300);
+  };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 overflow-y-auto">
-      <div className="min-h-screen px-4 py-8">
-        <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-2xl">
-          {/* Close Button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-3xl font-light"
-          >
-            ×
-          </button>
+    <div 
+      className={`fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}
+      onClick={handleClose}
+    >
+      <div 
+        className={`bg-white rounded-xl shadow-2xl w-full max-w-5xl max-h-[95vh] flex flex-col transform transition-all duration-300 ${isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'}`}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex-shrink-0 p-4 border-b flex justify-between items-center">
+            <h2 className="text-lg font-semibold text-gray-800">{product.name}</h2>
+            <button onClick={handleClose} className="text-gray-400 hover:text-gray-700">
+                <X className="w-6 h-6" />
+            </button>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
+        <div className="flex-1 overflow-y-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
             {/* Left - Images */}
-            <div>
-              <div className="mb-4 bg-gray-100 rounded-lg overflow-hidden">
+            <div className="space-y-4">
+              <div className="bg-gray-100 rounded-lg overflow-hidden">
                 <img
                   src={product.images[selectedImage]}
                   alt={product.name}
-                  className="w-full h-[600px] object-cover"
+                  className="w-full h-auto object-cover aspect-[3/4]" // Maintain aspect ratio
                 />
               </div>
               <div className="grid grid-cols-5 gap-2">
@@ -108,56 +119,56 @@ const ProductDetailPage = ({ product, onClose }) => {
                   <div
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`cursor-pointer border-2 rounded overflow-hidden ${
-                      selectedImage === index ? 'border-pink-500' : 'border-gray-300'
+                    className={`cursor-pointer rounded-md overflow-hidden border-2 ${
+                      selectedImage === index ? 'border-pink-500' : 'border-transparent'
                     }`}
                   >
-                    <img src={img} alt="" className="w-full h-20 object-cover" />
+                    <img src={img} alt="" className="w-full h-full object-cover aspect-square" />
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Right - Details */}
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.name}</h1>
+            <div className="space-y-6">
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                <div className="flex items-center gap-2 text-sm text-gray-500">
+                  <div className="flex text-yellow-400">
+                    {'★'.repeat(4)}{'☆'}
+                  </div>
+                  <span>(128 reviews)</span>
+                </div>
+              </div>
 
               {/* Price */}
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-3xl font-bold text-gray-900">${product.price}</span>
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-bold text-pink-600">${product.price}</span>
                 {product.originalPrice && (
-                  <>
-                    <span className="text-xl text-gray-500 line-through">${product.originalPrice}</span>
-                    <span className="bg-red-500 text-white px-3 py-1 text-sm font-bold rounded">
+                  <span className="text-xl text-gray-400 line-through">${product.originalPrice}</span>
+                )}
+                {product.discount && (
+                    <span className="bg-red-100 text-red-600 px-2 py-0.5 text-sm font-semibold rounded-full">
                       {product.discount}% OFF
                     </span>
-                  </>
                 )}
               </div>
 
-              {/* Rating */}
-              <div className="flex items-center gap-2 mb-6">
-                <div className="flex text-yellow-400">
-                  {'★'.repeat(4)}{'☆'}
-                </div>
-                <span className="text-sm text-gray-600">(128 reviews)</span>
-              </div>
-
               {/* Size Selection */}
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-3">
+              <div>
+                <div className="flex justify-between items-center mb-2">
                   <label className="text-sm font-semibold text-gray-700">Select Size</label>
-                  <a href="#" className="text-sm text-pink-600 hover:underline">Size Guide</a>
+                  <a href="#" className="text-sm text-pink-600 hover:underline font-medium">Size Guide</a>
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                   {['XS', 'S', 'M', 'L', 'XL'].map((size) => (
                     <button
                       key={size}
                       onClick={() => setSelectedSize(size)}
-                      className={`px-4 py-2 border-2 rounded font-medium ${
+                      className={`px-4 py-2 border rounded-lg font-medium text-sm transition-colors ${
                         selectedSize === size
-                          ? 'border-pink-600 bg-pink-50 text-pink-600'
-                          : 'border-gray-300 text-gray-700 hover:border-gray-400'
+                          ? 'border-pink-600 bg-pink-50 text-pink-700'
+                          : 'border-gray-300 text-gray-800 hover:border-gray-400'
                       }`}
                     >
                       {size}
@@ -167,41 +178,32 @@ const ProductDetailPage = ({ product, onClose }) => {
               </div>
 
               {/* Color Selection */}
-              <div className="mb-6">
-                <label className="text-sm font-semibold text-gray-700 block mb-3">Select Color</label>
-                <div className="flex gap-2">
+              <div>
+                <label className="text-sm font-semibold text-gray-700 block mb-2">Select Color</label>
+                <div className="flex gap-3">
                   {product.variants.map((variant, index) => (
                     <div
                       key={index}
-                      className="w-12 h-12 rounded border-2 border-gray-300 overflow-hidden cursor-pointer hover:border-pink-500"
+                      className={`w-10 h-10 rounded-full overflow-hidden cursor-pointer border-2 hover:border-pink-500 ${index === 0 ? 'border-pink-500' : 'border-transparent'}`}
                     >
                       <img src={variant.thumb} alt="" className="w-full h-full object-cover" />
                     </div>
                   ))}
                 </div>
               </div>
-
+              
               {/* Action Buttons */}
-              <div className="flex gap-4 mb-8">
-                <button className="flex-1 bg-pink-600 text-white py-4 rounded-lg font-semibold hover:bg-pink-700 transition">
+              <div className="grid grid-cols-1 gap-3 pt-4">
+                <button className="w-full bg-pink-600 text-white py-3 rounded-lg font-semibold text-base hover:bg-pink-700 transition flex items-center justify-center gap-2">
+                  <ShoppingCart className="w-5 h-5" />
                   ADD TO CART
                 </button>
-                <button className="px-6 border-2 border-pink-600 text-pink-600 rounded-lg hover:bg-pink-50 transition">
-                  <Heart className="w-6 h-6" />
+                <button className="w-full border-2 border-gray-300 text-gray-800 py-3 rounded-lg font-semibold text-base hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                  <Heart className="w-5 h-5" />
+                  ADD TO WISHLIST
                 </button>
               </div>
 
-              {/* Product Details */}
-              <div className="border-t pt-6">
-                <h3 className="font-semibold text-lg mb-3">Product Details</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>• Material: Premium lace and mesh</li>
-                  <li>• Care: Hand wash cold, lay flat to dry</li>
-                  <li>• Features: Adjustable straps, removable padding</li>
-                  <li>• Style: Sexy, comfortable, breathable</li>
-                  <li>• Occasion: Intimate wear, special occasions</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
