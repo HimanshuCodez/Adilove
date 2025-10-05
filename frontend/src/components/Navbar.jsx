@@ -46,7 +46,7 @@ export default function CloviaHeader() {
             <Menu className="w-6 h-6 text-gray-700" />
           </button>
           <div className="text-3xl md:text-5xl font-bold italic" style={{ fontFamily: 'cursive' }}>
-            FEBEU
+            FEBEUL
           </div>
           <div className="hidden md:flex items-center gap-2">
             <div className="flex flex-col gap-1">
