@@ -22,7 +22,7 @@ export default function CloviaHeader() {
           <span className="hidden lg:inline">BECOME AN AFFILIATE</span>
           <span className="hidden lg:inline">OUR STORES</span>
           <div className="flex items-center gap-2">
-            <span>PRIVATE MODE ?</span>
+           
             <button
               onClick={() => setPrivateMode(!privateMode)}
               className={`w-10 h-5 rounded-full transition-colors ${
