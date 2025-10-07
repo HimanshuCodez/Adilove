@@ -50,7 +50,7 @@ const Hero = () => {
               />
               <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-30">
                <h1 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: "sans-serif" }}>
-  FEBEU
+  FEBEUL
 </h1>
 
                 <Link to="/collection">
