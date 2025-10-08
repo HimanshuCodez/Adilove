@@ -1,4 +1,4 @@
-import { Search, Heart, User, ShoppingBag, Facebook, Instagram, Music2 } from 'lucide-react';
+import { Search, Heart, User, ShoppingBag, Facebook, Instagram, Music2, BellDot } from 'lucide-react';
 
 export default function Header() {
   const XIcon = () => (
@@ -44,8 +44,11 @@ export default function Header() {
             </div>
           </div>
           
-          <div className="flex-1 text-center">
-            Free Shipping on Orders Over $69
+          <div className="flex-1 text-sm flex justify-center items-center">
+            <div className="flex items-center gap-1">
+                <BellDot />
+                <span>Notifications</span>
+            </div>
           </div>
           
           <div>
@@ -66,7 +69,7 @@ export default function Header() {
               <div className="w-8 h-8 border-2 border-gray-800 flex items-center justify-center">
                 <span className="text-xs font-bold">F</span>
               </div>
-              <span className="text-2xl font-light tracking-wider">FEBUEL</span>
+              <span className="text-2xl font-light tracking-wider">FEBEUL</span>
             </div>
           </div>
           

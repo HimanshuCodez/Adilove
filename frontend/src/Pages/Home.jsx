@@ -15,12 +15,12 @@ const Home = () => {
   return  (
     <div><CloviaHeader/>
     <Hero/>
-    <div className='mt-10'><PinkBanner/></div>
+    {/* <div className='mt-10'><PinkBanner/></div> */}
     <div className='mt-5'><PromoBanner/></div>
-    <div className='mt-5'><BlackBanner/></div>
+    {/* <div className='mt-5'><BlackBanner/></div> */}
     <div className='mt-5'><StylesSection/></div>
     <div className='mt-5'><OfferBar/></div>
-    <div className='mt-5'><PurpleBanner/></div>
+    {/* <div className='mt-5'><PurpleBanner/></div> */}
     <Footer/>
     
     </div>

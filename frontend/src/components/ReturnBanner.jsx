@@ -8,9 +8,9 @@ const OfferBar = () => {
       <div className="flex items-center gap-2">
         <Truck className="w-5 h-5" />
         <div>
-          <p className="uppercase font-semibold">Free Returns</p>
-          <p className="text-xs sm:text-sm text-gray-100">
-            Free Shipping on orders over $69
+          
+          <p className="text-lg sm:text-base text-gray-100">
+            Free Shipping on orders over Rs 499
           </p>
         </div>
       </div>
@@ -23,10 +23,10 @@ const OfferBar = () => {
         <Tag className="w-5 h-5 text-yellow-300" />
         <div>
           <p className="uppercase font-semibold text-yellow-300">
-            Buy 2 Get 3rd 50% Off
+            Qr code will be here
           </p>
           <p className="text-xs sm:text-sm text-gray-100">
-            Buy 3 Get 4th 100% Off
+          Avaliable on Amazon 
           </p>
         </div>
       </div>
