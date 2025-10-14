@@ -1,4 +1,4 @@
-import { Search, Heart, User, ShoppingBag, Facebook, Instagram, Music2, BellDot } from 'lucide-react';
+import { Search, Heart, User, ShoppingBag, Facebook, Instagram, Music2, BellDot, HeadphonesIcon } from 'lucide-react';
 
 export default function Header() {
   const XIcon = () => (
@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Banner */}
-      <div className="bg-pink-500 text-white">
+      <div className="bg-[#f9aeaf] text-white">
         <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between text-sm">
           <div className="flex items-center gap-4">
             <Facebook className="w-4 h-4 cursor-pointer hover:opacity-80" />
@@ -51,8 +51,11 @@ export default function Header() {
             </div>
           </div>
           
-          <div>
-            <a href="#" className="hover:opacity-80">Support</a>
+        <div className="flex-1 text-sm flex justify-center items-center">
+            <div className="flex items-center gap-1">
+                <HeadphonesIcon />
+                <span>Help</span>
+            </div>
           </div>
         </div>
       </div>
