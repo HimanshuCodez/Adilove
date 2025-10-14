@@ -3,7 +3,7 @@ import { Truck, Tag, RefreshCw } from "lucide-react";
 
 const OfferBar = () => {
   return (
-    <div className="w-full bg-pink-500 text-white py-3 px-4 flex flex-col sm:flex-row items-center justify-center text-center gap-4 sm:gap-10 font-medium text-sm sm:text-base">
+    <div className="w-full bg-[#f9aeaf] text-white py-3 px-4 flex flex-col sm:flex-row items-center justify-center text-center gap-4 sm:gap-10 font-medium text-sm sm:text-base">
       {/* Left - Free Returns */}
       <div className="flex items-center gap-2">
         <Truck className="w-5 h-5" />

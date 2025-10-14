@@ -32,27 +32,29 @@ export default function Header() {
       {/* Top Banner */}
       <div className="bg-[#f9aeaf] text-white">
         <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between text-sm">
-          <div className="flex items-center gap-4">
-            <Facebook className="w-4 h-4 cursor-pointer hover:opacity-80" />
-            <Instagram className="w-4 h-4 cursor-pointer hover:opacity-80" />
-            <Music2 className="w-4 h-4 cursor-pointer hover:opacity-80" />
-            <div className="cursor-pointer hover:opacity-80">
-              <PinterestIcon />
-            </div>
-            <div className="cursor-pointer hover:opacity-80">
-              <XIcon />
+          <div className="flex-1 flex justify-start">
+            <div className="flex items-center gap-4">
+              <Facebook className="w-4 h-4 cursor-pointer hover:opacity-80" />
+              <Instagram className="w-4 h-4 cursor-pointer hover:opacity-80" />
+              <Music2 className="w-4 h-4 cursor-pointer hover:opacity-80" />
+              <div className="cursor-pointer hover:opacity-80">
+                <PinterestIcon />
+              </div>
+              <div className="cursor-pointer hover:opacity-80">
+                <XIcon />
+              </div>
             </div>
           </div>
           
-          <div className="flex-1 text-sm flex justify-center items-center">
-            <div className="flex items-center gap-1">
+          <div className="flex justify-center">
+            <div className="flex items-center gap-1 cursor-pointer hover:opacity-80">
                 <BellDot />
                 <span>Notifications</span>
             </div>
           </div>
-          
-        <div className="flex-1 text-sm flex justify-center items-center">
-            <div className="flex items-center gap-1">
+
+          <div className="flex-1 flex justify-end">
+            <div className="flex items-center gap-1 cursor-pointer hover:opacity-80">
                 <HeadphonesIcon />
                 <span>Help</span>
             </div>

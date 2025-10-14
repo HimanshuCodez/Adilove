@@ -19,14 +19,14 @@ const PromoBanner = () => {
               placeholder="Email Address"
               className="px-4 py-3 rounded-l-lg text-gray-800 w-64 focus:outline-none"
             />
-            <button className="bg-pink-500 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-r-lg uppercase">
+            <button className="bg-[#f9aeaf] hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-r-lg uppercase">
               Let me in!
             </button>
           </div>
         </div>
 
         {/* Logo Strip */}
-        <div className="bg-pink-500 py-4 flex flex-wrap justify-center gap-8 text-white font-semibold text-lg">
+        <div className="bg-[#f9aeaf] py-4 flex flex-wrap justify-center gap-8 text-white font-semibold text-lg">
           <span>Amazon</span>
           <span>FlipKart</span>
           <span>Ajio</span>
