@@ -12,6 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import SearchBar from "./SearchBar";
 
 const SwipingMessages = () => {
   const messages = [
@@ -62,6 +63,7 @@ export default function Header() {
     { title: "BABY DOLL", dropdown: ["Satin", "One-Piece"] },
     { title: "LINGERIE", dropdown: ["Teddy Bear", "Bras", "Panties"] },
     { title: "PAJAMAS", dropdown: ["Satin"] },
+    { title: "Become a Member?" },
   ];
 
   return (
@@ -111,7 +113,7 @@ export default function Header() {
       <div className="bg-[#f9aeaf] border-b">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex-1 flex justify-start">
-            <Search className="w-6 h-6 text-gray-700 cursor-pointer hover:text-gray-900" />
+           <SearchBar/>
           </div>
 
           <div className="flex-shrink-0">
@@ -127,9 +129,9 @@ export default function Header() {
       </div>
 
       {/* Navigation */}
-      <nav className="bg-white   border-b">
+      <nav className="bg-black   border-b">
         <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center md:justify-between h-16">
+          <div className="flex items-center justify-center md:justify-between h-14">
             {/* Mobile menu button*/}
             <div className="absolute left-0 inset-y-0 flex items-center md:hidden">
               <button
@@ -147,17 +149,17 @@ export default function Header() {
               </button>
             </div>
             {/* Desktop Menu */}
-            <div className="hidden pl-10  gap-80 md:flex md:items-center md:space-x-12">
+            <div className="hidden pl-10  gap-48 md:flex md:items-center md:space-x-12">
               {navigation.map((item, index) => (
-                <div key={index} className="relative group">
+                <div key={index} className="relative  group">
                   <a
                     href="#"
-                    className="py-4 text-sm font-medium text-gray-700 hover:text-gray-900 flex items-center transition-colors"
+                    className="py-4 text-sm font-medium text-white hover:bg-[#f9aeaf]  hover:text-black flex items-center transition-colors"
                   >
                     {item.title}
                     {item.dropdown && (
                       <svg
-                        className="ml-1 h-5 w-5 text-gray-500"
+                        className="ml-1 h-5 w-5 "
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
@@ -177,7 +179,7 @@ export default function Header() {
                           <li key={subIndex}>
                             <a
                               href="#"
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              className="block px-4 py-2 text-sm text-black  hover:text-[#f9aeaf]"
                             >
                               {subItem}
                             </a>
