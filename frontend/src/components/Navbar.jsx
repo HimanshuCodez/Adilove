@@ -63,7 +63,7 @@ export default function Header() {
     { title: "BABY DOLL", dropdown: ["Satin", "One-Piece"] },
     { title: "LINGERIE", dropdown: ["Teddy Bear", "Bras", "Panties"] },
     { title: "PAJAMAS", dropdown: ["Satin"] },
-    { title: "Become a Member?" },
+    { title: "Become a Member" },
   ];
 
   return (
@@ -121,9 +121,9 @@ export default function Header() {
           </div>
 
           <div className="flex-1 flex items-center justify-end gap-5">
-            <Heart className="w-6 h-6 text-gray-700 cursor-pointer hover:text-gray-900" />
-            <User className="w-6 h-6 text-gray-700 cursor-pointer hover:text-gray-900" />
-            <ShoppingBag className="w-6 h-6 text-gray-700 cursor-pointer hover:text-gray-900" />
+            <Heart className="w-6 h-6 text-gray-700 cursor-pointer hover:text-white" />
+            <User className="w-6 h-6 text-gray-700 cursor-pointer hover:text-white " />
+            <ShoppingBag className="w-6 h-6 text-gray-700 cursor-pointer hover:text-white" />
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function Header() {
                 <div key={index} className="relative  group">
                   <a
                     href="#"
-                    className="py-4 text-sm font-medium text-white hover:bg-[#f9aeaf]  hover:text-black flex items-center transition-colors"
+                    className="py-4 text-sm font-medium text-white hover:bg-[#f9aeaf]  rounded-md  hover:text-black flex items-center transition-colors"
                   >
                     {item.title}
                     {item.dropdown && (
@@ -173,15 +173,15 @@ export default function Header() {
                     )}
                   </a>
                   {item.dropdown && (
-                    <div className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-0 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 border">
-                      <ul className="py-1">
+                    <div className="absolute z-10 left-1/2 transform -translate-x-1/2 mt-0 w-48 bg-white   rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 border">
+                      <ul className="">
                         {item.dropdown.map((subItem, subIndex) => (
                           <li key={subIndex}>
                             <a
                               href="#"
-                              className="block px-4 py-2 text-sm text-black  hover:text-[#f9aeaf]"
+                              className="block px-4 py-2 text-sm text-black  hover:bg-[#f9aeaf] hover:text-black"
                             >
-                              {subItem}
+                              {subItem} 
                             </a>
                           </li>
                         ))}
