@@ -47,17 +47,7 @@ const Hero = () => {
                 alt={`Slide ${i + 1}`}
                 className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black bg-opacity-30">
-               <h1 className="text-4xl md:text-5xl font-bold" style={{ fontFamily: "sans-serif" }}>
-  FEBEUL
-</h1>
-
-                <Link to="/collection">
-                  <button className="mt-4 px-6 py-2 md:px-8 md:py-3 text-lg border-2 border-white text-white bg-transparent font-semibold hover:bg-white hover:text-black transition-all duration-300">
-                    Shop Now
-                  </button>
-                </Link>
-              </div>
+            
             </div>
           ))}
         </div>
