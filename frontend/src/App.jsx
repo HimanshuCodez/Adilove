@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import "./index.css"
+import Profile from "./Pages/Profile";
 
 
 const App = () => {
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         {/* Default route - Home */}
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile  />} />
 
         {/* Other routes */}
         {/* <Route path="/about" element={<About />} />
