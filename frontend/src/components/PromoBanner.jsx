@@ -2,7 +2,7 @@ import React from "react";
 
 const PromoBanner = () => {
   return (
-    <div className="w-full bg-[url('https://avidlove.com/cdn/shop/files/PC_1_f63272a2-cf48-48b1-938f-3ab488bfc357.jpg?v=1756778477&width=1400')] bg-cover bg-center text-white">
+    <div className="w-full bg-[url('https://i.postimg.cc/mkTv2DnZ/discount.jpg')] bg-cover bg-center text-white">
       {/* Overlay */}
       <div className="bg-black/70">
         <div className="flex flex-col items-center justify-center py-16 px-4 text-center space-y-5">

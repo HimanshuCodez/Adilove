@@ -11,6 +11,7 @@ import {
   HeadphonesIcon,
   Menu,
   X,
+  TwitchIcon,
 } from "lucide-react";
 import SearchBar from "./SearchBar";
 
@@ -60,10 +61,13 @@ export default function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigation = [
-    { title: "BABY DOLL", dropdown: ["Satin", "One-Piece"] },
+    { title: "BABYDOLL", dropdown: ["Satin", "One-Piece"] },
     { title: "LINGERIE", dropdown: ["Teddy Bear", "Bras", "Panties"] },
     { title: "PAJAMAS", dropdown: ["Satin"] },
-    { title: "Become a Member" },
+    { title: "NEW ARRIVALS", dropdown: ["Satin"] },
+    { title: "SALE", dropdown: ["FLAT 20% OFF","BABYDOLL BUY 3 GET 1 FREE"] },
+    { title: "BUY ON AMAZON", dropdown: ["Satin"] },
+    { title: "FEBEUL LUXE" },
   ];
 
   return (
@@ -90,7 +94,7 @@ export default function Header() {
 "
                 >
                   {" "}
-                  <XIcon />
+                  <TwitchIcon />
                 </a>
               </div>
             </div>
@@ -130,7 +134,7 @@ export default function Header() {
 
       {/* Navigation */}
       <nav className="bg-black   border-b">
-        <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl  mx-auto px-4 sm:px-6 lg:px-5">
           <div className="flex items-center justify-center md:justify-between h-14">
             {/* Mobile menu button*/}
             <div className="absolute left-0 inset-y-0 flex items-center md:hidden">
@@ -149,7 +153,7 @@ export default function Header() {
               </button>
             </div>
             {/* Desktop Menu */}
-            <div className="hidden pl-10  gap-48 md:flex md:items-center md:space-x-12">
+            <div className="hidden pl-10  gap-10 md:flex md:items-center md:space-x-12">
               {navigation.map((item, index) => (
                 <div key={index} className="relative  group">
                   <a
